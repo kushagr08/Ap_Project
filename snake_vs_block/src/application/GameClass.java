@@ -198,11 +198,11 @@ public class GameClass extends Application {
 			//Rectangle m2=new Rectangle(0,0,600,600);
 			//m2.setFill(Color.WHITE);
 			root.getChildren().add(mm);
-			KeyValue g=new KeyValue(mm.yProperty(),mm.getY()+600);
-			KeyFrame r=new KeyFrame(Duration.seconds(1),g);
-			Timeline timeline=new Timeline(r);
-			timeline.setCycleCount(Animation.INDEFINITE);
-		    timeline.play();
+			//KeyValue g=new KeyValue(mm.yProperty(),mm.getY()+600);
+			//KeyFrame r=new KeyFrame(Duration.seconds(1),g);
+			//Timeline timeline=new Timeline(r);
+			//timeline.setCycleCount(Animation.INDEFINITE);
+		    //timeline.play();
 			//root.getChildren().add(m2);
 			 Text p2=new Text("4");
 				p2.setX(325);
@@ -340,8 +340,10 @@ private class MyTimer extends AnimationTimer {
 
         for (int k=0;k<5;k++) {
         	double y=blo.get(k).getY();
+        	double x=blo.get(k).getX();
+        	double m=p.headx;
         	
-        	if ((blo.get(k).getOpacity()==1)&&((y+60)>200)&&(y+60<205)){
+        	if ((blo.get(k).getOpacity()==1)&&((y+60)>200)&&(y+60<205)&&(m-x<=50)&&(m-x>=0)){
         		blo.get(k).collide();
         		
         		

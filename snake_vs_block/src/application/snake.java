@@ -22,7 +22,7 @@ import javafx.scene.control.*;
 
 public class snake extends Group {
 	private int length;
-	private double headx;
+	double headx;
 	double heady;
 	
 	

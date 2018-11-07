@@ -22,11 +22,13 @@ import javafx.scene.control.*;
 public class block extends Rectangle {
       private int value;
       private Text p;
+     
       
       
       public block(int value,Color color,int xcoord,int ycoord,int width,int height) {
     	  super(xcoord,ycoord,width,height);
     	  this.value=value;
+    	  
     	  this.p=new Text(Integer.toString(value));
 			this.p.setX(xcoord+25);
 			this.p.setY(ycoord+25);
@@ -59,12 +61,14 @@ public class block extends Rectangle {
 
 	
 	public void collide() {
-		Rectangle g=new Rectangle(300,200,5,5);
-    	Rectangle h=new Rectangle(300,200,5,5);
-    	Rectangle i=new Rectangle(300,200,5,5);
-    	Rectangle j=new Rectangle(300,200,5,5);
-    	Rectangle k=new Rectangle(300,200,5,5);
-    	Rectangle l=new Rectangle(300,200,5,5);
+		this.setOpacity(0);
+		this.gettex().setOpacity(0);
+		Rectangle g=new Rectangle(this.getX(),200,5,5);
+    	Rectangle h=new Rectangle(this.getX(),200,5,5);
+    	Rectangle i=new Rectangle(this.getX(),200,5,5);
+    	Rectangle j=new Rectangle(this.getX(),200,5,5);
+    	Rectangle k=new Rectangle(this.getX(),200,5,5);
+    	Rectangle l=new Rectangle(this.getX(),200,5,5);
 	    g.setFill(Color.BLACK);
 
 	    g.setStroke(Color.YELLOW);
